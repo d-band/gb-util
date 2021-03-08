@@ -1,0 +1,19 @@
+{
+  "exclude": ["src/__tests__/**/*", "lib"],
+  "compilerOptions": {
+    "baseUrl": "src",
+    "outDir": "lib",
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "noUnusedParameters": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "alwaysStrict": true,
+    "removeComments": true,
+    "lib": ["DOM", "ES2015"],
+    "sourceMap": false,
+    "declaration": true,
+    "declarationDir": "lib"
+  }
+}

@@ -1,0 +1,67 @@
+{
+  "name": "gb-util",
+  "version": "1.0.0",
+  "description": "GB standard tool library",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "src",
+    "lib",
+    "!src/__tests__"
+  ],
+  "scripts": {
+    "lint": "eslint src scripts",
+    "format": "prettier --write src",
+    "build": "rm -rf lib && tsc",
+    "test": "jest --coverage",
+    "coveralls": "coveralls < coverage/lcov.info",
+    "prepare": "npm run build",
+    "docs": "typedoc src/index.ts",
+    "pages": "npm run docs && gh-pages -d docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d-band/gb-util.git"
+  },
+  "keywords": [
+    "GB",
+    "utils",
+    "library",
+    "GB 11643",
+    "GB 11714",
+    "GB 32100",
+    "GB/T 2260",
+    "GB/T 17710",
+    "ISO 7064",
+    "ID Card",
+    "Unified Social Credit Identifier",
+    "Check System",
+    "Chinese Standards",
+    "region code",
+    "area code",
+    "validator",
+    "parser"
+  ],
+  "author": "d-band",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/d-band/gb-util/issues"
+  },
+  "homepage": "https://github.com/d-band/gb-util#readme",
+  "devDependencies": {
+    "@types/jest": "^26.0.20",
+    "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "@typescript-eslint/parser": "^4.16.1",
+    "cheerio": "^1.0.0-rc.5",
+    "coveralls": "^3.1.0",
+    "eslint": "^7.21.0",
+    "eslint-config-prettier": "^8.1.0",
+    "gh-pages": "^3.1.0",
+    "got": "^11.8.2",
+    "jest": "^26.6.3",
+    "prettier": "^2.2.1",
+    "ts-jest": "^26.5.3",
+    "typedoc": "^0.20.30",
+    "typescript": "^4.2.2"
+  }
+}

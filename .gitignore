@@ -1,0 +1,40 @@
+*.iml
+.ipr
+.iws
+*~
+~*
+*.diff
+*.patch
+*.bak
+Thumbs.db
+*.swp
+*.swo
+*.log
+*.sublime-project
+*.sublime-workspace
+
+# OSX
+.DS_Store
+
+# VSCode
+.vscode/
+jsconfig.json
+
+# IDEA
+.idea
+.project
+.settings
+
+# node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+yarn.lock
+package-lock.json
+
+# generated
+lib/
+coverage/
+diff/
+docs/
