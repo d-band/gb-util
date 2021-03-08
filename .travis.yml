@@ -5,5 +5,8 @@ node_js:
   - 12
   - 14
 
+before_script:
+  - export NODE_OPTIONS="--max_old_space_size=8192"
+
 after_success:
   - npm run coveralls
