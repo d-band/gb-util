@@ -1,0 +1,30 @@
+name: Data
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '22 0 * * *'
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - run: npm i
+      - name: Fetch data
+        run: node scripts/fetch.js
+      - name: Push changes
+        run: |
+          git config user.email "helloyou2012@yeah.net"
+          git config user.name "helloyou2012"
+          git add .
+          git commit -m "Change data at: $(date +%Y-%m-%d)"
+          git push
+
