@@ -1,0 +1,194 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>gb-util</title>
+	<meta name="description" content="Documentation for gb-util">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">gb-util</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>gb-util</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#gb-utilities" id="gb-utilities" style="color: inherit; text-decoration: none;">
+					<h1>GB Utilities</h1>
+				</a>
+				<blockquote>
+					<p><code>gb-util</code> is a toolset for Chinese standards. It supports: <code>GB 11643</code>, <code>GB 11714</code>, <code>GB 32100</code>, <code>GB/T 2260</code>, <code>GB/T 17710</code>, <code>ISO 7064</code>.</p>
+				</blockquote>
+				<p><a href="https://www.npmjs.com/package/gb-util"><img src="https://img.shields.io/npm/v/gb-util.svg" alt="NPM version"></a>
+					<a href="https://www.npmjs.com/package/gb-util"><img src="https://img.shields.io/npm/dm/gb-util.svg" alt="NPM downloads"></a>
+					<a href="https://travis-ci.org/d-band/gb-util"><img src="https://travis-ci.org/d-band/gb-util.svg?branch=master" alt="Build Status"></a>
+					<a href="https://coveralls.io/github/d-band/gb-util?branch=master"><img src="https://coveralls.io/repos/github/d-band/gb-util/badge.svg?branch=master" alt="Coverage Status"></a>
+				<a href="https://david-dm.org/d-band/gb-util"><img src="https://david-dm.org/d-band/gb-util.svg" alt="Dependency Status"></a></p>
+				<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+					<h2>Install</h2>
+				</a>
+				<pre><code class="language-bash"><span style="color: #000000">$ npm install gb-util</span>
+</code></pre>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
+				<pre><code class="language-javascript"><span style="color: #AF00DB">import</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #001080">GB_11643</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">GB_11714</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">GB_32100</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">GB_T_2260</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">GB_T_17710</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">ISO_7064</span>
+<span style="color: #000000">} </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;gb-util&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #0070C1">GB_11643</span><span style="color: #000000">.</span><span style="color: #795E26">compute</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;11010519491231002&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// =&gt; &#039;X&#039;</span>
+<span style="color: #0070C1">GB_11643</span><span style="color: #000000">.</span><span style="color: #795E26">isValid</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;11010519491231002X&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// =&gt; true</span>
+<span style="color: #0070C1">GB_11643</span><span style="color: #000000">.</span><span style="color: #795E26">parse</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;11010519491231002X&#039;</span><span style="color: #000000">);</span>
+<span style="color: #008000">// =&gt; { areaCode: &#039;110105&#039;, birth: &#039;1949-12-31&#039;, order: 2, sex: 0 }</span>
+
+<span style="color: #0070C1">GB_11714</span><span style="color: #000000">.</span><span style="color: #795E26">compute</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;D2143569&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// =&gt; &#039;X&#039;</span>
+<span style="color: #0070C1">GB_11714</span><span style="color: #000000">.</span><span style="color: #795E26">isValid</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;D2143569X&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// =&gt; true</span>
+
+<span style="color: #0070C1">GB_32100</span><span style="color: #000000">.</span><span style="color: #795E26">compute</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;91350100M000100Y4&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// =&gt; &#039;3&#039;</span>
+<span style="color: #0070C1">GB_32100</span><span style="color: #000000">.</span><span style="color: #795E26">isValid</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;91350100M000100Y43&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// =&gt; true</span>
+<span style="color: #0070C1">GB_32100</span><span style="color: #000000">.</span><span style="color: #795E26">parse</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;91350100M000100Y43&#039;</span><span style="color: #000000">);</span>
+<span style="color: #008000">// =&gt; { adminDept: &#039;工商&#039;, areaCode: &#039;350100&#039;, id: &#039;M000100Y4&#039;, type: &#039;企业&#039; }</span>
+
+<span style="color: #0070C1">GB_T_2260</span><span style="color: #000000">.</span><span style="color: #795E26">getAreaName</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;110000&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// =&gt; &#039;北京市&#039;</span>
+<span style="color: #0070C1">GB_T_2260</span><span style="color: #000000">.</span><span style="color: #795E26">getAreaCode</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;北京市&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// =&gt; [&#039;110000&#039;]</span>
+<span style="color: #0070C1">GB_T_2260</span><span style="color: #000000">.</span><span style="color: #795E26">isRevoked</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;372401&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// =&gt; true</span>
+<span style="color: #0070C1">GB_T_2260</span><span style="color: #000000">.</span><span style="color: #795E26">getUsedNames</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;220281&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// =&gt; [&#039;蛟河市&#039;, &#039;桦甸市&#039;]</span>
+<span style="color: #0070C1">GB_T_2260</span><span style="color: #000000">.</span><span style="color: #795E26">getArea</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;110105&#039;</span><span style="color: #000000">);</span>
+<span style="color: #008000">/* =&gt; {</span>
+<span style="color: #008000">  code: &#039;110105&#039;,</span>
+<span style="color: #008000">  name: &#039;朝阳区&#039;,</span>
+<span style="color: #008000">  province: &#039;北京市&#039;,</span>
+<span style="color: #008000">  city: &#039;北京市&#039;,</span>
+<span style="color: #008000">  county: &#039;朝阳区&#039;,</span>
+<span style="color: #008000">  revoked: false,</span>
+<span style="color: #008000">  usedNames: []</span>
+<span style="color: #008000">} */</span>
+<span style="color: #0070C1">GB_T_2260</span><span style="color: #000000">.</span><span style="color: #795E26">getAreaTree</span><span style="color: #000000">();</span>
+<span style="color: #008000">// =&gt; [{ code: &#039;130000&#039;, name: &#039;河北省&#039;, children: [...] }, ...]</span>
+<span style="color: #0070C1">GB_T_2260</span><span style="color: #000000">.</span><span style="color: #795E26">getProvinces</span><span style="color: #000000">();</span>
+<span style="color: #008000">// =&gt; [{ code: &#039;110000&#039;, name: &#039;北京市&#039; }, ...]</span>
+<span style="color: #0070C1">GB_T_2260</span><span style="color: #000000">.</span><span style="color: #795E26">getCities</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;130000&#039;</span><span style="color: #000000">);</span>
+<span style="color: #008000">// =&gt; [{ code: &#039;130100&#039;, name: &#039;石家庄市&#039; }, ...]</span>
+<span style="color: #0070C1">GB_T_2260</span><span style="color: #000000">.</span><span style="color: #795E26">getCounties</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;130100&#039;</span><span style="color: #000000">);</span>
+<span style="color: #008000">// =&gt; [{ code: &#039;130102&#039;, name: &#039;长安市&#039; }, ...]</span>
+
+<span style="color: #0070C1">ISO_7064</span><span style="color: #000000">.</span><span style="color: #795E26">mod11_2</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;0794&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// =&gt; &#039;0&#039;</span>
+<span style="color: #0070C1">ISO_7064</span><span style="color: #000000">.</span><span style="color: #795E26">mod37_2</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;1234ABCD&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// =&gt; &#039;V&#039;</span>
+<span style="color: #0070C1">ISO_7064</span><span style="color: #000000">.</span><span style="color: #795E26">mod97_10</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;794&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// =&gt; &#039;44&#039;</span>
+<span style="color: #0070C1">ISO_7064</span><span style="color: #000000">.</span><span style="color: #795E26">mod661_26</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;ABCD&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// =&gt; &#039;KN&#039;</span>
+<span style="color: #0070C1">ISO_7064</span><span style="color: #000000">.</span><span style="color: #795E26">mod1271_36</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;ISO79&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// =&gt; &#039;3W&#039;</span>
+</code></pre>
+				<a href="#documents" id="documents" style="color: inherit; text-decoration: none;">
+					<h2>Documents</h2>
+				</a>
+				<p><a href="d-band.github.io/gb-util/">Read full documents</a></p>
+				<a href="#report-a-issue" id="report-a-issue" style="color: inherit; text-decoration: none;">
+					<h2>Report a issue</h2>
+				</a>
+				<ul>
+					<li><a href="https://github.com/d-band/gb-util/issues">All issues</a></li>
+					<li><a href="https://github.com/d-band/gb-util/issues/new">New issue</a></li>
+				</ul>
+				<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+					<h2>License</h2>
+				</a>
+				<p>gb-util is available under the terms of the MIT License.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/gb_11643.html">GB_<wbr>11643</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/gb_11714.html">GB_<wbr>11714</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/gb_32100.html">GB_<wbr>32100</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/gb_t_17710.html">GB_<wbr><wbr>T_17710</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/gb_t_2260.html">GB_<wbr><wbr>T_2260</a>
+					</li>
+					<li class=" tsd-kind-namespace">
+						<a href="modules/iso_7064.html">ISO_<wbr>7064</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
