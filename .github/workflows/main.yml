@@ -24,7 +24,6 @@ jobs:
         run: |
           git config user.email "helloyou2012@yeah.net"
           git config user.name "helloyou2012"
-          git add .
-          git commit -m "Change data at: $(date +%Y-%m-%d)"
+          git commit -am "Change data at: $(date +%Y-%m-%d)" || true
           git push
 
