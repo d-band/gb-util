@@ -72,7 +72,7 @@ ISO_7064.mod1271_36('ISO79'); // => '3W'
 
 ## Documents
 
-[Read full documents](d-band.github.io/gb-util/)
+[Read full documents](https://d-band.github.io/gb-util/)
 
 ## Report a issue
 
