@@ -24,6 +24,7 @@ import {
   GB_32100,
   GB_T_2260,
   GB_T_17710,
+  GB_T_5795,
   ISO_7064
 } from 'gb-util';
 
@@ -68,6 +69,22 @@ ISO_7064.mod37_2('1234ABCD'); // => 'V'
 ISO_7064.mod97_10('794'); // => '44'
 ISO_7064.mod661_26('ABCD'); // => 'KN'
 ISO_7064.mod1271_36('ISO79'); // => '3W'
+
+GB_T_5795.compute('978-4-87311-336-4'); // => 4
+GB_T_5795.isValid('978-4-87311-336-4'); // => true
+GB_T_5795.parse('9784873113364');
+/* => {
+  isIsbn10: false,
+  isbn10: '4873113369',
+  isbn13: '9784873113364',
+  prefix: '978',
+  group: '4',
+  groupName: 'Japan',
+  publisher: '87311',
+  article: '336',
+  isbn10h: '4-87311-336-9',
+  isbn13h: '978-4-87311-336-4'
+} */
 ```
 
 ## Documents
