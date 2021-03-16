@@ -42,7 +42,7 @@ async function main() {
     '/* eslint-disable */',
     '// prettier-ignore',
     `const data: { [key: string]: { name: string, ranges: string[][] } } = ${JSON.stringify(groups)};`,
-    'export default data;'
+    'export default data;\n'
   ].join('\n');
   const tsFile = path.join(__dirname, '../src', 'isbn_groups.ts');
   fs.writeFileSync(tsFile, tsData, 'utf-8');

@@ -8,7 +8,11 @@ export function normalize(isbn: string): string {
   }
   return '';
 }
-
+/**
+ * 计算 ISBN 的校验码
+ * @param isbn ISBN 编码
+ * @returns 校验码
+ */
 export function compute(isbn: string): string {
   isbn = normalize(isbn);
   if (isbn.length >= 12) {
@@ -20,7 +24,11 @@ export function compute(isbn: string): string {
   const alphabet = '0123456789X';
   return computeCC(isbn, 11, W, alphabet);
 }
-
+/**
+ * 判断 ISBN 编码是否有效
+ * @param isbn ISBN 编码
+ * @returns 返回是否有效
+ */
 export function isValid(isbn: string): boolean {
   isbn = normalize(isbn);
   if (isbn.length === 10 || isbn.length === 13) {
@@ -48,7 +56,11 @@ interface ISBN {
   isbn10h?: string;
   isbn13h?: string;
 }
-
+/**
+ * 获取 ISBN 组信息
+ * @param isbn13 13位的 ISBN 编码
+ * @returns ISBN 组信息
+ */
 export function getGroup(isbn13: string): null | ISBNGroup {
   const prefix = isbn13.slice(0, 3);
   for (let i = 6; i > 0; i--) {
@@ -60,17 +72,29 @@ export function getGroup(isbn13: string): null | ISBNGroup {
   }
   return null;
 }
-
+/**
+ * 将10位 ISBN 编码转为13位
+ * @param isbn10 10位 ISBN 编码
+ * @returns 13位 ISBN 编码
+ */
 export function toIsbn13(isbn10: string): string {
   const s = '978' + isbn10.slice(0, 9);
   return s + compute(s);
 }
-
+/**
+ * 将13位 ISBN 编码转为10位
+ * @param isbn13 13位 ISBN 编码
+ * @returns 10位 ISBN 编码
+ */
 export function toIsbn10(isbn13: string): string {
   const s = isbn13.slice(3, 12);
   return s + compute(s);
 }
-
+/**
+ * 解析 ISBN 信息
+ * @param isbn ISBN 编码
+ * @returns 返回 ISBN 信息
+ */
 export function parse(isbn: string): ISBN {
   isbn = normalize(isbn);
   assert(isValid(isbn), 'INVALID_ISBN', 'ISBN is invalid');
