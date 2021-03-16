@@ -5,6 +5,10 @@ const path = require('path');
 
 const dir = path.join(__dirname, '../data');
 const files = fs.readdirSync(dir).sort();
+const diffPath = path.join(__dirname, '../diff');
+if (!fs.existsSync(diffPath)) {
+  fs.mkdirSync(diffPath);
+}
 const all = {};
 const usedNames = {};
 let latest = null;
@@ -26,8 +30,9 @@ files.forEach(file => {
       }
     }
   });
-  const outFile = path.join(__dirname, '../diff', file);
-  fs.writeFileSync(outFile, JSON.stringify(diff, null, '  '), 'utf-8');
+  
+  const diffFile = path.join(diffPath, file);
+  fs.writeFileSync(diffFile, JSON.stringify(diff, null, '  '), 'utf-8');
 });
 
 const revoked = {};
