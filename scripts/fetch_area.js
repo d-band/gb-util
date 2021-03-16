@@ -5,9 +5,9 @@ const path = require('path');
 const got = require('got');
 const cheerio = require('cheerio');
 
-const prefixUrl = 'http://www.mca.gov.cn';
+const domain = 'http://www.mca.gov.cn';
 const from1980 = '/article/sj/xzqh/1980/';
-const date2020 = '/article/sj/xzqh/2020/';
+const year2020 = '/article/sj/xzqh/2020/';
 
 const pad = (s) => s.length === 2 ? s : `0${s}`;
 
@@ -24,6 +24,9 @@ function getDate(s) {
 }
 
 async function getData(url) {
+  if (!/^http/i.test(url)) {
+    url = domain + url;
+  }
   const text = await got(url, { retry: 3 }).text();
   const $ = cheerio.load(text);
   const content = $('.content');
@@ -52,7 +55,7 @@ async function main(listUrl) {
   let page = 1;
   do {
     const url = page === 1 ? listUrl : `${listUrl}?${page}`;
-    const body = await got(prefixUrl + url, { retry: 3 }).text();
+    const body = await got(url, { retry: 3 }).text();
     const $ = cheerio.load(body);
     const list = [];
     $('a.artitlelist').each((i, el) => {
@@ -64,7 +67,7 @@ async function main(listUrl) {
       }
     });
     for (const item of list) {
-      const data = await getData(prefixUrl + item.link);
+      const data = await getData(item.link);
       if (Object.keys(data).length < 10) {
         continue;
       }
@@ -80,10 +83,11 @@ async function main(listUrl) {
   } while (page <= total);
 }
 
-const baseUrl = process.argv[2] === '1980' ? from1980 : date2020;
+const baseUrl = process.argv[2] === '1980' ? from1980 : year2020;
 
-main(baseUrl).then(() => {
+main(domain + baseUrl).then(() => {
   console.log('done.');
 }).catch(e => {
   console.error(e);
+  process.exit(1);
 });

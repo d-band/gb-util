@@ -1,4 +1,4 @@
-name: Data
+name: Fetch data
 
 on:
   workflow_dispatch:
@@ -19,7 +19,9 @@ jobs:
           node-version: 14
       - run: npm i
       - name: Fetch data
-        run: node scripts/fetch.js
+        run: |
+          node scripts/fetch_area.js && node scripts/gen_area.js
+          node scripts/fetch_isbn.js
       - name: Push changes
         run: |
           git config user.email "helloyou2012@yeah.net"
