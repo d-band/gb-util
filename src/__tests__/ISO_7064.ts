@@ -16,3 +16,13 @@ test('mod1271_36', () => {
   expect(alg.mod1271_36('ISO79')).toBe('3W');
   expect(alg.mod1271_36('ZZZZZZZZZZZZZZZZ')).toBe('UU');
 });
+
+test('mod11_10', () => {
+  expect(alg.mod11_10('0794')).toBe('5');
+});
+test('mod27_26', () => {
+  expect(alg.mod27_26('JEJLMGJ')).toBe('S');
+});
+test('mod37_36', () => {
+  expect(alg.mod37_36('B7Q3SFTUSH2QN7BIXBPMNZAM')).toBe('I');
+});
