@@ -5,7 +5,7 @@ GB Utilities
 
 [![NPM version](https://img.shields.io/npm/v/gb-util.svg)](https://www.npmjs.com/package/gb-util)
 [![NPM downloads](https://img.shields.io/npm/dm/gb-util.svg)](https://www.npmjs.com/package/gb-util)
-[![Build Status](https://travis-ci.org/d-band/gb-util.svg?branch=master)](https://travis-ci.org/d-band/gb-util)
+[![Build Status](https://travis-ci.com/d-band/gb-util.svg?branch=master)](https://travis-ci.com/d-band/gb-util)
 [![Coverage Status](https://coveralls.io/repos/github/d-band/gb-util/badge.svg?branch=master)](https://coveralls.io/github/d-band/gb-util?branch=master)
 [![Dependency Status](https://david-dm.org/d-band/gb-util.svg)](https://david-dm.org/d-band/gb-util)
 
