@@ -64,11 +64,17 @@ GB_T_2260.getCities('130000');
 GB_T_2260.getCounties('130100');
 // => [{ code: '130102', name: '长安市' }, ...]
 
+// Pure systems
 ISO_7064.mod11_2('0794'); // => '0'
 ISO_7064.mod37_2('1234ABCD'); // => 'V'
 ISO_7064.mod97_10('794'); // => '44'
 ISO_7064.mod661_26('ABCD'); // => 'KN'
 ISO_7064.mod1271_36('ISO79'); // => '3W'
+// Hybrid systems
+ISO_7064.mod11_10('0794'); // => '5'
+ISO_7064.mod27_26('JEJLMGJ'); // => 'S'
+ISO_7064.mod37_36('B7Q3SFTUSH2QN7BIXBPMNZAM'); // => 'I'
+
 
 GB_T_5795.compute('978-4-87311-336-4'); // => 4
 GB_T_5795.isValid('978-4-87311-336-4'); // => true
